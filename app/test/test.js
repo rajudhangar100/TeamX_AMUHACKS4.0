@@ -44,12 +44,14 @@ const Test = () => {
         setAudioURL(audioURL);
         setisloading(true)
         try{
-            const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
-                headers: { "Content-Type": "multipart/form-data" },
-            });
-            console.log("Transcribed text: ",res.data.text);
-            setTranscript(res.data.text);
-            setprediction(res.data.prediction);
+            
+            // const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
+            //     headers: { "Content-Type": "multipart/form-data" },
+            // });
+
+            // console.log("Transcribed text: ",res.data.text);
+            // setTranscript(res.data.text);
+            setprediction(50);
             setisloading(false)
         }catch(error){
             console.log("Transcribed Error: ",error);

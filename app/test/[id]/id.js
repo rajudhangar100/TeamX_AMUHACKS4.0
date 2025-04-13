@@ -58,16 +58,16 @@ export default function ID({ params }) {
             </button>
           ))}
         </div>
-        <div className="flex w-full gap-80 items-center">
+        <div className="flex w-full md:gap-80 gap-28 items-center">
         {id!=1 && <button
           onClick={ () =>router.push(`/test/${id - 1}?score=${score}`)}
-          className="cursor-pointer px-6 py-3 mt-4  rounded-xl mx-auto text-lg border border-gray-600 hover:bg-gray-700 transition"
+          className="cursor-pointer px-6 py-3 mt-4 rounded-xl mx-auto text-lg border border-gray-600 hover:bg-gray-700 transition"
         >
           Prev
         </button>}
         <button
           onClick={handleNext}
-          className="cursor-pointer px-6 py-3 mt-4  rounded-xl mx-auto text-lg border border-gray-600 hover:bg-gray-700 transition"
+          className="cursor-pointer px-6 py-3 mt-4 rounded-xl mx-auto text-lg border border-gray-600 hover:bg-gray-700 transition"
           disabled={!selected}
         >
           {id<=8 ? <>Next</> : <>Submit</>}

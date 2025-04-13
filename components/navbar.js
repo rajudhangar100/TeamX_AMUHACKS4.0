@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-md">
         <Link href={'/'}>Dyslexi Ai</Link>
       </div>
-      <div className="navigation flex gap-10">
+      <div className="navigation flex md:gap-10 gap-4">
         <Link href="/" className="hover:text-pink-400 hover:underline transition">Home</Link>
         <Link href="/about" className="hover:text-pink-400 hover:underline transition">About</Link>
         <Link href="/doctors" className="hover:text-pink-400 hover:underline transition">Get Help</Link>

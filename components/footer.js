@@ -25,12 +25,12 @@ const Footer = () => {
         {/* Contact & Socials */}
         <div>
           <h3 className="text-white font-semibold mb-3 text-lg">Connect with Us</h3>
-          <p className="text-sm text-purple-300 mb-2">Email: support@dyslexiai.com</p>
+          <p className="text-sm text-purple-300 mb-2">Email: dyslexiaai@gmail.com</p>
           <div className="flex gap-6 mt-2">
-            <Link href="#" className="hover:text-purple-400 transition duration-200">
+            <Link href="/" className="hover:text-purple-400 transition duration-200">
               <i className="fab fa-twitter" /> Twitter
             </Link>
-            <Link href="#" className="hover:text-purple-400 transition duration-200">
+            <Link href="/" className="hover:text-purple-400 transition duration-200">
               <i className="fab fa-linkedin" /> LinkedIn
             </Link>
           </div>
