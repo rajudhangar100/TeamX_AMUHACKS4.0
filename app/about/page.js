@@ -15,7 +15,7 @@ export default function AboutUs() {
             <strong>DyslexiAI</strong> is an innovative AI-powered platform designed to assist in the early detection and personalized therapy of dyslexia in children. Our goal is to make the process accessible, engaging, and effective by using gamified assessments, phonics-based interactive games, and real-time analysis of speech and behavior patterns.
           </p>
           <p className="text-xl text-gray-300 leading-relaxed ">
-            By combining artificial intelligence with educational psychology, DyslexiAI identifies signs of dyslexia early and adapts to each child's learning pace. With features like progress tracking, Indian-accent pronunciation support, and a suite of games like <em>Phonics Game</em>, <em>Rhyme Race</em>, and <em>Word Builder</em>, the platform delivers both assessment and therapy in a fun and intuitive way.
+            By combining artificial intelligence with educational psychology, DyslexiAI identifies signs of dyslexia early and adapts to each child&apos;s learning pace. With features like progress tracking, Indian-accent pronunciation support, and a suite of games like <em>Phonics Game</em>, <em>Rhyme Race</em>, and <em>Word Builder</em>, the platform delivers both assessment and therapy in a fun and intuitive way.
           </p>
           <p className="text-xl text-gray-300 leading-relaxed">
             Join us in building a more inclusive world where learning differences are identified early and embraced with care and creativity.

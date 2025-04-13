@@ -69,7 +69,7 @@ export default function Dashboard() {
       {/* Motivational Quote */}
       <div className="flex justify-center items-center mb-10 text-indigo-300 gap-2 text-lg italic">
         <Sparkles className="w-5 h-5" />
-        "Learning is a treasure that will follow its owner everywhere."
+        &rdquo;Learning is a treasure that will follow its owner everywhere.&rdquo;
       </div>
 
       {/* Game Cards Grid */}
