@@ -1,6 +1,6 @@
 'use client';
 export const dynamic = 'force-dynamic';
-
+import { Suspense } from 'react';
 import { useRouter } from "next/navigation";
 import { use } from 'react'
 import { useSearchParams } from "next/navigation";
@@ -41,6 +41,7 @@ export default function QuestionPage({ params }) {
   }
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="min-h-screen bg-[#0D0D0D] text-white flex flex-col justify-center items-center p-6">
       <div className="bg-[#1A1A1A] rounded-2xl p-8 shadow-md max-w-xl w-full">
         <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">
@@ -77,5 +78,6 @@ export default function QuestionPage({ params }) {
         </div>
       </div>
     </div>
+    </Suspense>
   );
 }

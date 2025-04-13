@@ -1,6 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
+import { Suspense } from 'react';
 import { useState, useRef,useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import axios from "axios";
@@ -62,6 +63,7 @@ export default function TestPage() {
 
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="text-white min-h-screen bg-black px-8 py-12">
       <h1 className="text-4xl font-bold mb-6 text-center text-purple-500">Final Dyslexia Test: Read it!</h1>
       <p className="text-lg text-center text-gray-300 max-w-xl mx-auto mb-8">
@@ -111,5 +113,6 @@ export default function TestPage() {
       }
       </div>
     </div>
+    </Suspense>
   );
 }
