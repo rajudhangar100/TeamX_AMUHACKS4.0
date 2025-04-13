@@ -41,7 +41,7 @@ const Test = () => {
         const audioURL = URL.createObjectURL(audioBlob);
         setAudioURL(audioURL);
   
-        const res = await axios.post("http://localhost:8000/transcribe/", formData, {
+        const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
   
