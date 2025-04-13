@@ -41,13 +41,18 @@ const Test = () => {
         const audioURL = URL.createObjectURL(audioBlob);
         setAudioURL(audioURL);
   
-        const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        try{
+            const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+            console.log("Transcribed text: ",res.data.text);
+            setTranscript(res.data.text);
+            setprediction(res.data.prediction);
+        }catch(error){
+            console.log("Transcribed Error: ",error);
+            setprediction(50);
+        };
   
-        console.log("Transcribed text: ",res.data.text);
-        setTranscript(res.data.text);
-        setprediction(res.data.prediction);
       };
   
       mediaRecorderRef.current.start();
