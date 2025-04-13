@@ -1,5 +1,7 @@
 // pages/test.tsx
 "use client";
+export const dynamic = 'force-dynamic';
+
 import { useState, useRef,useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import axios from "axios";
