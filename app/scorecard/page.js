@@ -1,7 +1,6 @@
 'use client';
 export const dynamic = 'force-dynamic';
-
-
+import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { CheckCircle, AlertTriangle, AlertOctagon } from 'lucide-react'; // Icons
@@ -50,6 +49,7 @@ export default function ScoreCard() {
   const readingPercent = Math.round(readScore * 100);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="min-h-screen bg-black flex items-center justify-center p-6">
       <div className="bg-[#121212] text-white p-10 rounded-2xl shadow-2xl w-full max-w-3xl space-y-10">
         <h2 className="text-4xl font-bold text-center text-white">Your Dyslexia ScoreCard</h2>
@@ -119,5 +119,6 @@ export default function ScoreCard() {
         </div>
       </div>
     </div>
+    </Suspense>
   );
 }
