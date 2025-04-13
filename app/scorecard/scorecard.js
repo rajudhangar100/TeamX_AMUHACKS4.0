@@ -67,7 +67,7 @@ export default function ScoreCard() {
           </div>
 
           {/* Reading Ring */}
-          <div className="relative w-32 h-32">
+          {/* <div className="relative w-32 h-32">
             <svg className="rotate-[-90deg]" width="100%" height="100%" viewBox="0 0 100 100">
               <circle
                 cx="50"
@@ -93,7 +93,7 @@ export default function ScoreCard() {
               <span>Reading Test</span>
               <span className="text-xl font-semibold text-white">{readingPercent}%</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Risk Summary */}

@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import axios from "axios";
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from "next/navigation";
+import Loader from "@/components/loader";
 
 const Test = () => {
     const searchParams = useSearchParams();
@@ -15,6 +16,7 @@ const Test = () => {
     const [prediction,setprediction]=useState("");
     const mediaRecorderRef = useRef(null);
     const router=useRouter();
+    const [isloading,setisloading]=useState(false);
     const audioChunks= [];
     let overallScore;
     
@@ -40,7 +42,7 @@ const Test = () => {
   
         const audioURL = URL.createObjectURL(audioBlob);
         setAudioURL(audioURL);
-  
+        setisloading(true)
         try{
             const res = await axios.post("https://backend-dyslexia.onrender.com/transcribe/", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
@@ -48,9 +50,11 @@ const Test = () => {
             console.log("Transcribed text: ",res.data.text);
             setTranscript(res.data.text);
             setprediction(res.data.prediction);
+            setisloading(false)
         }catch(error){
             console.log("Transcribed Error: ",error);
             setprediction(50);
+            setisloading(false)
         };
   
       };
@@ -90,7 +94,7 @@ const Test = () => {
             ) : (
               <button
                 onClick={stopRecording}
-                className="bg-gray-800 cursor-pointer px-6 py-3 rounded-full border border-pink-500"
+                className="cursor-pointer bg-gradient-to-r from-pink-600 to-purple-700 px-6 py-3 rounded-full shadow-lg hover:shadow-pink-500/50 transition"
               >
                 ⏹ Stop Recording
               </button>
@@ -107,11 +111,12 @@ const Test = () => {
             </div>
           )}
            <div className="flex justify-center items-center gap-6 my-6">
-          {prediction && 
+          {(prediction && isloading===false) &&
             <button onClick={() => router.push(`/scorecard?score=${overallScore}`)} className="text-center mx-auto group cursor-pointer inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-pink-500/50 transition duration-300">
               Your ScoreCard <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </button>
           }
+          {isloading && <Loader/>}
           </div>
     </div>
      
