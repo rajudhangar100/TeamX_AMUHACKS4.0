@@ -1,0 +1,32 @@
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient {
+    animation: gradientBackground 20s ease infinite;
+  }
+
+  .reveal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    background-color: rgba(30, 27, 75, 0.95); /* purple-ish dark */
+    padding: 20px;
+    border-radius: 1rem;
+    transition: all 0.4s ease-in-out;
+    z-index: 50;
+    pointer-events: none;
+    color: white;
+  }
+  
+  .group:hover .reveal-box {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
